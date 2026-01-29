@@ -1,0 +1,43 @@
+services:
+  ubuntu1:
+    build:
+      context: ./ssh-containers
+    container_name: ub1
+    hostname: ub1
+    volumes:
+      - ./ssh-containers/ub1:/home/runner
+    # Исправить права при запуске
+    command: >
+      sh -c "
+        chown -R runner:runner /home/runner &&
+        chmod 700 /home/runner/.ssh &&
+        chmod 600 /home/runner/.ssh/authorized_keys &&
+        /usr/sbin/sshd -D
+      "
+    ports:
+      - "2222:22"
+    networks:
+      - my-net
+
+  ubuntu2:
+    build:
+      context: ./ssh-containers
+    container_name: ub2
+    hostname: ub2
+    volumes:
+      - ./ssh-containers/ub2:/home/runner
+    command: >
+      sh -c "
+        chown -R runner:runner /home/runner &&
+        chmod 700 /home/runner/.ssh &&
+        chmod 600 /home/runner/.ssh/authorized_keys &&
+        /usr/sbin/sshd -D
+      "
+    ports:
+      - "2223:22"
+    networks:
+      - my-net
+
+networks:
+  my-net:
+    driver: bridge
