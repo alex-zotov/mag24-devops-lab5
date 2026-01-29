@@ -4,6 +4,8 @@ RUN apt-get update && \
     apt-get install -y openssh-server sudo curl && \
     mkdir -p /var/run/sshd
 
+RUN apt-get install -y iputils-ping
+
 RUN echo 'PermitRootLogin no' >> /etc/ssh/sshd_config && \
     echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config && \  
     echo 'PubkeyAuthentication yes' >> /etc/ssh/sshd_config 

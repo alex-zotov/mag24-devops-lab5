@@ -8,13 +8,19 @@ ubuntu:24:04 open-ssh
 собираем два сервиса ub1 и ub2  
 у каждого монтируем домашние папки для runner  
 в них есть .ssh/authorized_keys  
-здесь же указываем права на .ssh/authorized_keys и сартуем SSH-сервер  
+здесь же указываем права на .ssh/authorized_keys и стартуем SSH-сервер  
 сеть my_net  
 [docker-compose.yml](./docker-compose.yml)
 
-
-собираем и запускаем/перезапускаем контейнеры  
+Cборка образов
 ```
+docker-compose build
+docker-compose build --no-cache
+```
+
+запускаем контейнеры (-d - как демон)
+```
+docker compose up
 docker compose up -d
 ```
 
@@ -27,11 +33,6 @@ docker compose stop
 Остановить и удалить контейнеры, сети (но не тома):
 ```
 docker compose down
-```
-Пересборка образов
-```
-docker-compose build
-docker-compose build --no-cache
 ```
 
 
