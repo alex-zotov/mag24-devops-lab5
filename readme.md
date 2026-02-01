@@ -32,7 +32,7 @@ apt install ansible
 ```
 ansible-playbook playbook1.yml -i ./inventory.yml
 ```
-[логи выполнения 1](./log1)
+[логи выполнения 1](./playbook1.log)
 
 
 ### playbook вариант 2
@@ -44,6 +44,6 @@ ansible-playbook playbook1.yml -i ./inventory.yml
 ```
 ansible-playbook playbook2.yml -i ./inventory.yml
 ```
-[логи выполнения 2](./log2)
+[логи выполнения 2](./playbook2.log)
 
 для интерпритации строк используется шаблоинзатор jinja2
