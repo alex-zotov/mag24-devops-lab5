@@ -1,0 +1,49 @@
+PLAY [sacn targets with loop and NMAP] *********************************************************************************
+
+TASK [Install NMAP] ****************************************************************************************************
+ok: [ub1]
+ok: [ub2]
+
+TASK [Scan] ************************************************************************************************************
+changed: [ub1] => (item=helios.psu.ru)
+changed: [ub2] => (item=helios.psu.ru)
+changed: [ub2] => (item=www.psu.ru)
+changed: [ub1] => (item=www.psu.ru)
+
+TASK [Scan results] ****************************************************************************************************
+ok: [ub1] => (item={'changed': True, 'stdout': '# Nmap 7.94SVN scan initiated Sun Feb  1 12:36:38 2026 as: nmap -p 80 -oG - helios.psu.ru\nHost: 212.192.70.18 (iris.psu.ru)\tStatus: Up\nHost: 212.192.70.18 (iris.psu.ru)\tPorts: 80/open/tcp//http///\n# Nmap done at Sun Feb  1 12:36:38 2026 -- 1 IP address (1 host up) scanned in 0.13 seconds', 'stderr': '', 'rc': 0, 'cmd': ['nmap', 'helios.psu.ru', '-p', '80', '-oG', '-'], 'start': '2026-02-01 12:36:38.029523', 'end': '2026-02-01 12:36:38.163409', 'delta': '0:00:00.133886', 'msg': '', 'invocation': {'module_args': {'_raw_params': 'nmap helios.psu.ru -p 80 -oG -', '_uses_shell': False, 'expand_argument_vars': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['# Nmap 7.94SVN scan initiated Sun Feb  1 12:36:38 2026 as: nmap -p 80 -oG - helios.psu.ru', 'Host: 212.192.70.18 (iris.psu.ru)\tStatus: Up', 'Host: 212.192.70.18 (iris.psu.ru)\tPorts: 80/open/tcp//http///', '# Nmap done at Sun Feb  1 12:36:38 2026 -- 1 IP address (1 host up) scanned in 0.13 seconds'], 'stderr_lines': [], 'failed': False, 'item': 'helios.psu.ru', 'ansible_loop_var': 'item'}) => {
+    "msg": [
+        "# Nmap 7.94SVN scan initiated Sun Feb  1 12:36:38 2026 as: nmap -p 80 -oG - helios.psu.ru",
+        "Host: 212.192.70.18 (iris.psu.ru)\tStatus: Up",
+        "Host: 212.192.70.18 (iris.psu.ru)\tPorts: 80/open/tcp//http///",
+        "# Nmap done at Sun Feb  1 12:36:38 2026 -- 1 IP address (1 host up) scanned in 0.13 seconds"
+    ]
+}
+ok: [ub2] => (item={'changed': True, 'stdout': '# Nmap 7.94SVN scan initiated Sun Feb  1 12:36:38 2026 as: nmap -p 80 -oG - helios.psu.ru\nHost: 212.192.70.18 (iris.psu.ru)\tStatus: Up\nHost: 212.192.70.18 (iris.psu.ru)\tPorts: 80/open/tcp//http///\n# Nmap done at Sun Feb  1 12:36:38 2026 -- 1 IP address (1 host up) scanned in 0.14 seconds', 'stderr': '', 'rc': 0, 'cmd': ['nmap', 'helios.psu.ru', '-p', '80', '-oG', '-'], 'start': '2026-02-01 12:36:38.031466', 'end': '2026-02-01 12:36:38.178393', 'delta': '0:00:00.146927', 'msg': '', 'invocation': {'module_args': {'_raw_params': 'nmap helios.psu.ru -p 80 -oG -', '_uses_shell': False, 'expand_argument_vars': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['# Nmap 7.94SVN scan initiated Sun Feb  1 12:36:38 2026 as: nmap -p 80 -oG - helios.psu.ru', 'Host: 212.192.70.18 (iris.psu.ru)\tStatus: Up', 'Host: 212.192.70.18 (iris.psu.ru)\tPorts: 80/open/tcp//http///', '# Nmap done at Sun Feb  1 12:36:38 2026 -- 1 IP address (1 host up) scanned in 0.14 seconds'], 'stderr_lines': [], 'failed': False, 'item': 'helios.psu.ru', 'ansible_loop_var': 'item'}) => {
+    "msg": [
+        "# Nmap 7.94SVN scan initiated Sun Feb  1 12:36:38 2026 as: nmap -p 80 -oG - helios.psu.ru",
+        "Host: 212.192.70.18 (iris.psu.ru)\tStatus: Up",
+        "Host: 212.192.70.18 (iris.psu.ru)\tPorts: 80/open/tcp//http///",
+        "# Nmap done at Sun Feb  1 12:36:38 2026 -- 1 IP address (1 host up) scanned in 0.14 seconds"
+    ]
+}
+ok: [ub1] => (item={'changed': True, 'stdout': '# Nmap 7.94SVN scan initiated Sun Feb  1 12:36:38 2026 as: nmap -p 80 -oG - www.psu.ru\nHost: 46.146.231.187 (lemonbro.ru)\tStatus: Up\nHost: 46.146.231.187 (lemonbro.ru)\tPorts: 80/open/tcp//http///\n# Nmap done at Sun Feb  1 12:36:38 2026 -- 1 IP address (1 host up) scanned in 0.15 seconds', 'stderr': '', 'rc': 0, 'cmd': ['nmap', 'www.psu.ru', '-p', '80', '-oG', '-'], 'start': '2026-02-01 12:36:38.332172', 'end': '2026-02-01 12:36:38.485822', 'delta': '0:00:00.153650', 'msg': '', 'invocation': {'module_args': {'_raw_params': 'nmap www.psu.ru -p 80 -oG -', '_uses_shell': False, 'expand_argument_vars': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['# Nmap 7.94SVN scan initiated Sun Feb  1 12:36:38 2026 as: nmap -p 80 -oG - www.psu.ru', 'Host: 46.146.231.187 (lemonbro.ru)\tStatus: Up', 'Host: 46.146.231.187 (lemonbro.ru)\tPorts: 80/open/tcp//http///', '# Nmap done at Sun Feb  1 12:36:38 2026 -- 1 IP address (1 host up) scanned in 0.15 seconds'], 'stderr_lines': [], 'failed': False, 'item': 'www.psu.ru', 'ansible_loop_var': 'item'}) => {
+    "msg": [
+        "# Nmap 7.94SVN scan initiated Sun Feb  1 12:36:38 2026 as: nmap -p 80 -oG - www.psu.ru",
+        "Host: 46.146.231.187 (lemonbro.ru)\tStatus: Up",
+        "Host: 46.146.231.187 (lemonbro.ru)\tPorts: 80/open/tcp//http///",
+        "# Nmap done at Sun Feb  1 12:36:38 2026 -- 1 IP address (1 host up) scanned in 0.15 seconds"
+    ]
+}
+ok: [ub2] => (item={'changed': True, 'stdout': '# Nmap 7.94SVN scan initiated Sun Feb  1 12:36:38 2026 as: nmap -p 80 -oG - www.psu.ru\nHost: 46.146.231.187 (lemonbro.ru)\tStatus: Up\nHost: 46.146.231.187 (lemonbro.ru)\tPorts: 80/open/tcp//http///\n# Nmap done at Sun Feb  1 12:36:38 2026 -- 1 IP address (1 host up) scanned in 0.12 seconds', 'stderr': '', 'rc': 0, 'cmd': ['nmap', 'www.psu.ru', '-p', '80', '-oG', '-'], 'start': '2026-02-01 12:36:38.342104', 'end': '2026-02-01 12:36:38.474069', 'delta': '0:00:00.131965', 'msg': '', 'invocation': {'module_args': {'_raw_params': 'nmap www.psu.ru -p 80 -oG -', '_uses_shell': False, 'expand_argument_vars': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['# Nmap 7.94SVN scan initiated Sun Feb  1 12:36:38 2026 as: nmap -p 80 -oG - www.psu.ru', 'Host: 46.146.231.187 (lemonbro.ru)\tStatus: Up', 'Host: 46.146.231.187 (lemonbro.ru)\tPorts: 80/open/tcp//http///', '# Nmap done at Sun Feb  1 12:36:38 2026 -- 1 IP address (1 host up) scanned in 0.12 seconds'], 'stderr_lines': [], 'failed': False, 'item': 'www.psu.ru', 'ansible_loop_var': 'item'}) => {
+    "msg": [
+        "# Nmap 7.94SVN scan initiated Sun Feb  1 12:36:38 2026 as: nmap -p 80 -oG - www.psu.ru",
+        "Host: 46.146.231.187 (lemonbro.ru)\tStatus: Up",
+        "Host: 46.146.231.187 (lemonbro.ru)\tPorts: 80/open/tcp//http///",
+        "# Nmap done at Sun Feb  1 12:36:38 2026 -- 1 IP address (1 host up) scanned in 0.12 seconds"
+    ]
+}
+
+PLAY RECAP *************************************************************************************************************
+ub1                        : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ub2                        : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

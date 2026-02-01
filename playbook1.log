@@ -1,0 +1,40 @@
+PLAY [NMAP hosts and report] ***********************************************************************************
+
+TASK [Install NMAP] ********************************************************************************************
+changed: [ub2]
+changed: [ub1]
+
+TASK [Copy nmap targets list] **********************************************************************************
+changed: [ub2]
+changed: [ub1]
+
+TASK [Run nmap] ************************************************************************************************
+changed: [ub1]
+changed: [ub2]
+
+TASK [Nmap output] *********************************************************************************************
+ok: [ub1] => {
+    "msg": [
+        "# Nmap 7.94SVN scan initiated Sun Feb  1 12:24:33 2026 as: nmap -iL /root/nmap-targets -p 80 -oG -",
+        "Host: 212.192.70.18 (iris.psu.ru)\tStatus: Up",
+        "Host: 212.192.70.18 (iris.psu.ru)\tPorts: 80/open/tcp//http///",
+        "Host: 46.146.231.187 (lemonbro.ru)\tStatus: Up",
+        "Host: 46.146.231.187 (lemonbro.ru)\tPorts: 80/open/tcp//http///",
+        "# Nmap done at Sun Feb  1 12:24:33 2026 -- 2 IP addresses (2 hosts up) scanned in 0.34 seconds"
+    ]
+}
+ok: [ub2] => {
+    "msg": [
+        "# Nmap 7.94SVN scan initiated Sun Feb  1 12:24:33 2026 as: nmap -iL /root/nmap-targets -p 80 -oG -",
+        "Host: 212.192.70.18 (iris.psu.ru)\tStatus: Up",
+        "Host: 212.192.70.18 (iris.psu.ru)\tPorts: 80/open/tcp//http///",
+        "Host: 46.146.231.187 (lemonbro.ru)\tStatus: Up",
+        "Host: 46.146.231.187 (lemonbro.ru)\tPorts: 80/open/tcp//http///",
+        "# Nmap done at Sun Feb  1 12:24:33 2026 -- 2 IP addresses (2 hosts up) scanned in 0.34 seconds"
+    ]
+}
+
+PLAY RECAP *****************************************************************************************************
+ub1                        : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ub2                        : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

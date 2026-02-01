@@ -1,0 +1,28 @@
+---
+- name: NMAP hosts and report
+  hosts: docker_containers
+  remote_user: runner
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Install NMAP
+      ansible.builtin.apt:
+        name: nmap
+        state: present
+        update_cache: true
+
+    - name: Copy nmap targets list
+      copy:
+        src: ./nmap-targets
+        dest: ~/nmap-targets
+        force: true
+        mode: "0644"
+
+    - name: Run nmap 
+      ansible.builtin.command: "nmap -iL ~/nmap-targets -p 80 -oG -"
+      register: nmap_result
+
+    - name: Nmap output
+      debug:
+        msg: "{{ nmap_result.stdout_lines }}"

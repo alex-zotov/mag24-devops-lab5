@@ -1,0 +1,14 @@
+all:
+  children:
+    docker_containers:
+      hosts:
+        ub1:
+          ansible_port: 2222
+          ansible_host: localhost
+          ansible_user: runner
+          ansible_ssh_private_key_file: ~/.ssh/id_ed25519
+        ub2:
+          ansible_port: 2223
+          ansible_host: localhost
+          ansible_user: runner
+          ansible_ssh_private_key_file: ~/.ssh/id_ed25519
